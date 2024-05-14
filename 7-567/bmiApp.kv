@@ -1,0 +1,63 @@
+<UI>:
+    id:scr_manager
+    Scr_Knowledge:
+    Scr_bmi:
+
+<Scr_bmi>:
+    name:"Scr_bmi"
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text:"กลับหน้าแรก"
+            font_name:"tahoma"
+            on_press:app.root.current='Scr_Knowledge'
+            pos_hint:{'center_x' : 0.90,'center_y':0.85} #ปรับขยับชิดซ้ายขวา กลาง เรื่อยๆ 
+            size_hint:0.25,0.10
+        TextInput:
+            id:txt_weight
+            font_size: 20
+            size_hint:(1,0.35)
+            hint_text:"input weight"
+            readonly: True
+        Slider:
+            id:Slider_weight
+            min: 30
+            max: 100
+            step: 0.5
+            set: 40
+            on_value: txt_weight.text = str (Slider_weight.value)
+        TextInput:
+            id:txt_height
+            font_size: 20
+            size_hint:(1,0.35)
+            hint_text:"input height"
+        Slider:
+            id:Slider_height
+            min: 30
+            max: 100
+            step: 0.5
+            set: 40
+            on_value: txt_height.text = str (Slider_height.value)
+        Button:
+            id:btn_bmi 
+            on_press: root.cal_bmi()
+            text: "Id:txt_weight"          
+        Label:      
+            id:lbl_bmi
+            text:"bmi ="
+            color: 'red'
+        Image:
+            id: img_bmi
+<Scr_Knowledge>:
+    name:'Scr_Knowledge'
+    BoxLayout:
+        orientation: 'vertical'
+        Image:
+            source: "1.jpg"
+        Button:
+            text:"คำนวณ"
+            font_name:"tahoma" 
+            color: 'yellow'
+            on_press:app.root.current='Scr_bmi'
+            pos_hint:{'center_x' : 0.5,'center_y':0.5} #ปรับขยับชิดซ้ายขวา กลาง เรื่อยๆ 
+            size_hint:0.25,0.10
