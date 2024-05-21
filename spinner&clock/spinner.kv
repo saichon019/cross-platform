@@ -1,0 +1,24 @@
+<UI> :
+    BoxLayout:
+        orientation:'vertical'
+        BoxLayout:
+        #ส่วนบน
+            Spinner:
+                id:spin_lang
+                text:"please select"
+                values:("python","php","html","sql")
+                size_hint:(0.4,0.2)
+                pos_hint:{'center_x' : 0.90,'center_y':0.95}
+            Label:
+                id:lbl_output
+                text:"you selected:{}".format(spin_lang.text)
+#------------------------------------------------------------------
+        BoxLayout:
+        #ส่วนล่าง
+            Label:
+                text:"row2"
+            TextInput:
+                id:txt_input
+            Button:
+                text:"add item"
+                on_press: root.add_item()
