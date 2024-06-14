@@ -1,0 +1,232 @@
+<LoginScreen>:
+    canvas.before;
+    <LoginScreen>:
+            canvas.before:
+    Color:
+            rgba: 215/255, 189/255, 226/255, 1  # สีพื้นหลัง
+
+    Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: [50, 50, 50, 50]  # เพิ่ม padding ด้านบนให้มากขึ้น
+
+        Image:
+            source: '01.png'
+            size_hint_y: None
+            height: '150dp'  # ลดขนาดรูปภาพ
+
+        Label:
+            text: 'ระบบใบอนุญาตขับรถ'
+            font_size: '20sp'
+            font_name: 'tahoma'
+            color: 0, 0, 0, 1  # ฟอนต์สีดำ
+            size_hint_y: None
+            height: '40dp'  # ลดความสูงให้กับ Label
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+            size_hint_y: None
+            height: '200dp'  # กำหนดความสูงให้กับ BoxLayout ของปุ่ม
+
+            Button:
+                text: 'เข้าสู่ระบบ'
+                on_press: app.root.get_screen('login').validate_login()
+                background_color: 242,255, 0, 0.81  # สีเหลืองอ่อน (RGBA: 244, 208, 63)
+                font_name: 'tahoma'
+                color: 0, 0, 0, 1  # ฟอนต์สีดำ
+                size_hint_y: None
+                height: '50dp'  # กำหนดความสูงให้กับปุ่ม
+
+            Button:
+                text: 'ลงทะเบียนใหม่'
+                on_press: app.root.current = 'register'
+                background_color: 0.5, 0.3, 0.7, 1  # สีม่วงเข้ม (RGBA: 51, 0, 102)
+                font_name: 'tahoma'
+                color: 0, 0, 0, 1  # ฟอนต์สีดำ
+                size_hint_y: None
+                height: '50dp'  # กำหนดความสูงให้กับปุ่ม
+
+            Button:
+                text: 'For Foreigner'
+                on_press: print("For Foreigner")
+                background_color: 135/255, 206/255, 250/255, 1  # สีฟ้า (RGBA: 0, 128, 255)
+                font_name: 'tahoma'
+                color: 0, 0, 0, 1  # ฟอนต์สีดำ
+                size_hint_y: None
+                height: '50dp'  # กำหนดความสูงให้กับปุ่ม
+
+<RegisterScreen>:
+    canvas.before:
+        Color:
+            rgba: 215/255, 189/255, 226/255, 1  # สีพื้นหลัง
+
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: [50, 50, 50, 50]  # เพิ่ม padding ด้านบนให้มากขึ้น
+
+        Image:
+            source: '02.png'
+            size_hint_y: None
+            height: '150dp'  # ลดขนาดรูปภาพ
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+
+            Label:
+                text: 'ลงทะเบียนเข้ารับการอบรม'
+                font_name: 'tahoma'
+                color: 0, 0, 0, 1  # ฟอนต์สีดำ
+
+            TextInput:
+                id: id_card_input1
+                hint_text: 'ระบุเลขบัตรประชาชน'
+                font_name: 'tahoma'
+                multiline: False
+
+            TextInput:
+                id: id_card_input2
+                hint_text: 'ระบุเลขบัตรประชาชนอีกครั้ง'
+                font_name: 'tahoma'
+                multiline: False
+            
+            TextInput:
+                id: phone_number_input
+                hint_text: 'ระบุเบอร์โทรศัพท์'
+                font_name: 'tahoma'
+                multiline: False
+
+            TextInput:
+                id: email_input
+                hint_text: 'ระบุอีเมลล์'
+                font_name: 'tahoma'
+                multiline: False
+
+            Button:
+                text: 'ดำเนินการต่อ'
+                font_name: 'tahoma'
+                background_color: 0.5, 0.3, 0.7, 1  # สีม่วงเข้ม (RGBA: 51, 0, 102)
+                on_press: root.validate_inputs()
+
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: [50, 50, 50, 50]  # เพิ่ม padding ด้านบนให้มากขึ้น
+
+        Image:
+            source: '01.png'
+            size_hint_y: None
+            height: '150dp'  # ลดขนาดรูปภาพ
+
+        Label:
+            text: 'ระบบใบอนุญาตขับรถ'
+            font_size: '20sp'
+            font_name: 'tahoma'
+            color: 0, 0, 0, 1  # ฟอนต์สีดำ
+            size_hint_y: None
+            height: '40dp'  # ลดความสูงให้กับ Label
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+            size_hint_y: None
+            height: '200dp'  # กำหนดความสูงให้กับ BoxLayout ของปุ่ม
+
+            Button:
+                text: 'เข้าสู่ระบบ'
+                on_press: app.root.get_screen('login').validate_login()
+                background_color: 242,255, 0, 0.81  # สีเหลืองอ่อน (RGBA: 244, 208, 63)
+                font_name: 'tahoma'
+                color: 0, 0, 0, 1  # ฟอนต์สีดำ
+                size_hint_y: None
+                height: '50dp'  # กำหนดความสูงให้กับปุ่ม
+
+            Button:
+                text: 'ลงทะเบียนใหม่'
+                on_press: app.root.current = 'register'
+                background_color: 0.5, 0.3, 0.7, 1  # สีม่วงเข้ม (RGBA: 51, 0, 102)
+                font_name: 'tahoma'
+                color: 0, 0, 0, 1  # ฟอนต์สีดำ
+                size_hint_y: None
+                height: '50dp'  # กำหนดความสูงให้กับปุ่ม
+
+            Button:
+                text: 'For Foreigner'
+                on_press: print("For Foreigner")
+                background_color: 135/255, 206/255, 250/255, 1  # สีฟ้า (RGBA: 0, 128, 255)
+                font_name: 'tahoma'
+                color: 0, 0, 0, 1  # ฟอนต์สีดำ
+                size_hint_y: None
+                height: '50dp'  # กำหนดความสูงให้กับปุ่ม
+
+<RegisterScreen>:
+    canvas.before:
+        Color:
+            rgba: 215/255, 189/255, 226/255, 1  # สีพื้นหลัง
+
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: [50, 50, 50, 50]  # เพิ่ม padding ด้านบนให้มากขึ้น
+
+        Image:
+            source: '02.png'
+            size_hint_y: None
+            height: '150dp'  # ลดขนาดรูปภาพ
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+
+            Label:
+                text: 'ลงทะเบียนเข้ารับการอบรม'
+                font_name: 'tahoma'
+                color: 0, 0, 0, 1  # ฟอนต์สีดำ
+
+            TextInput:
+                id: id_card_input1
+                hint_text: 'ระบุเลขบัตรประชาชน'
+                font_name: 'tahoma'
+                multiline: False
+
+            TextInput:
+                id: id_card_input2
+                hint_text: 'ระบุเลขบัตรประชาชนอีกครั้ง'
+                font_name: 'tahoma'
+                multiline: False
+            
+            TextInput:
+                id: phone_number_input
+                hint_text: 'ระบุเบอร์โทรศัพท์'
+                font_name: 'tahoma'
+                multiline: False
+
+            TextInput:
+                id: email_input
+                hint_text: 'ระบุอีเมลล์'
+                font_name: 'tahoma'
+                multiline: False
+
+            Button:
+                text: 'ดำเนินการต่อ'
+                font_name: 'tahoma'
+                background_color: 0.5, 0.3, 0.7, 1  # สีม่วงเข้ม (RGBA: 51, 0, 102)
+                on_press: root.validate_inputs()
